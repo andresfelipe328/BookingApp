@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" type="text/css" href="../public/css/style.css">
+      <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@500&display=swap" rel="stylesheet">
+      <title>Doctor List</title>
+   </head>
+   <body>
+      <h1 id="docTableTitle">Doctor List</h1>
+      <div class= "search">
+         <h3>Filter by Speciality</h3>
+         <input id="search-bar" class="form-control" type=text onkeyup='search()' placeholder= "speciality">
+      </div>
+      <table id="table" style="margin-top: 20px;">
+         <tr>
+            <th>Speciality</th>
+            <th>Doctor</th>
+         </tr>
+            <% for (var i=0; i < docTable.length;++i) {%>
+               <tr>
+                  <td> <%= docTable[i].speciality %> </td>
+                  <td style="cursor: pointer" class="doctor" onclick="selectDoctor(this)"> <%= docTable[i].doctor_name %> </td>
+               </tr>
+            <% } %>
+      </table>
+   </body>
+   <script>
+      function search() {
+         const input = document.getElementById('search-bar');
+         const filter = input.value.toUpperCase();
+         const table = document.getElementById('table');
+         const tr = table.getElementsByTagName('tr');
+         let td, txtValue;
+
+         for (let i = 0; i < tr.length; ++i) {
+            td = tr[i].getElementsByTagName('td')[0]
+            if (td) {
+               txtValue = td.textContent || td.innerText;
+               if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                  tr[i].style.display = "";
+               }
+               else {
+                  tr[i].style.display = "none";
+               }
+            }
+         }
+      }
+
+      function selectDoctor(name) {
+         window.location = '/docHours?name=' + name.innerText;
+      }
+   </script>
+</html>

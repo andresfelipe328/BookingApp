@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="eng">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Login</title>
+      <link rel="stylesheet" type="text/css" href="../public/css/style.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@500&display=swap" rel="stylesheet">
+   </head>
+
+   <!-- Header of Login Page -->
+   <header>
+      <nav>
+         <div class="logo">
+            <h1>Login</h1>
+         </div>
+         <ul class="nav-links">
+            <li><a href="../views/index.html">Home</a></li>
+            <li><a href="/register">Register</a></li>
+         </ul>
+         <div class="lines">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+         </div>
+      </nav>
+   </header>
+   <body>
+      <h3>
+         <% if (messages.error) { %>
+         <%= messages.error %>
+         <% } %>
+      </h3>
+      <!-- Form for Login Inputs -->
+      <div class="login-box" style="height: 230px">
+         <form action="/login" method="POST">
+            <label for="email">Username</label>
+            <input type="email" autocomplete="off" name="email" placeholder="email">
+            <label for="password">Password</label>
+            <input type="password" autocomplete="off" name="password" placeholder="password">
+            <button>Submit</button>
+         </form>
+      </div>
+   </body>
+   <script src="../public/js/menu.js"></script>
+</html>

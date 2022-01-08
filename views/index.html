@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../public/css/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@500&display=swap" rel="stylesheet">
+        <title>Appointment Booking</title>
+    </head>
+
+    <!-- Header of Website -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>App Booking</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/register">Register</a></li>
+                <li><a href="/login">Login</a></li>
+                <form class="logout" action="/logout?_method=DELETE" method="POST">
+                <button class="blogout" type="submit" style="background-color: rgb(44, 68, 68)">Log Out</button></form>
+            </ul>
+            <div class="lines">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Body of Website -->
+    <body>
+        <div class="apt-box" style="height: 150px">
+            <h2>Make Appointment</h2>
+
+            <form action="/selDoc" method="POST">
+                <button> Select Doctor</button>
+            </form>
+
+        </div>
+    </body>
+    <script src="../public/js/menu.js"></script>
+    <!-- Footer of Website -->
+    <footer>
+        
+    </footer>
+</html>

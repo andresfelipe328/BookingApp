@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="eng">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Register</title>
+      <link rel="stylesheet" type="text/css" href="../public/css/style.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@500&display=swap" rel="stylesheet">
+   </head>
+
+<!-- Header of Register Page -->
+   <header>
+      <nav>
+         <div class="logo">
+            <h1>Register</h1>
+         </div>
+         <ul class="nav-links">
+            <li><a href="../views/index.html">Home</a></li>
+            <li><a href="/login">Login</a></li>
+         </ul>
+         <div class="lines">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+         </div>
+     </nav>
+   </header>
+   <body>
+      <h3>
+         <% if (mess) { %>
+         <%= mess %>
+         <% } %>
+      </h3>
+
+      <!-- Form for Register Inputs -->
+      <div class="register-box">
+         <form action="/register" method="POST">
+            <label for="name"> Full Name</label>
+            <input type="text" autocomplete="off" name="name" placeholder="name">
+            <label for="email">Email</label>
+            <input type="email" autocomplete="off" name="email" placeholder="email">
+            <label for="password">Password</label>
+            <input type="password" autocomplete="off" name="password" placeholder="password">
+            <label for="Vpassword">Confirm Password</label>
+            <input type="password" autocomplete="off" name="Vpassword" placeholder="password">
+            <button>Submit</button>
+         </form>
+      </div>
+   </body>
+   <script src="../public/js/menu.js"></script>
+</html>
