@@ -23,8 +23,7 @@ footer {
 }
 
 .blogout {
-   position: absolute;
-   top: 20px;
+   margin-top: 0;
 }
 
 .logout, .blogout {
